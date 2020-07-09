@@ -10,7 +10,7 @@ namespace myFirstTestCase
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void Test()
         {
             IWebDriver driver = new ChromeDriver();
             driver.Url = "http://google.com";

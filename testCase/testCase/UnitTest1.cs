@@ -28,7 +28,7 @@ namespace testCase
         public void Test2()
         {
            IWebDriver driver = new ChromeDriver();
-            driver.Url = "https://www.facebook.com/";
+            driver.Url = "https://www.facebook.com/";           // facebook
             Thread.Sleep(3000);
           //  driver.FindElement(By.Name("name")).SendKeys("aman");
             driver.FindElement(By.Name("firstname")).SendKeys("Pavit");

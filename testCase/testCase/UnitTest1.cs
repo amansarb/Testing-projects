@@ -30,7 +30,7 @@ namespace testCase
            IWebDriver driver = new ChromeDriver();
             driver.Url = "https://www.facebook.com/";
             Thread.Sleep(3000);
-            driver.FindElement(By.Name("name")).SendKeys("aman");
+          //  driver.FindElement(By.Name("name")).SendKeys("aman");
             driver.FindElement(By.Name("firstname")).SendKeys("Pavit");
             driver.FindElement(By.Name("lastname")).SendKeys("Sadhal");
             driver.FindElement(By.Id("u_0_r")).SendKeys("amalotey@gmail.com");
@@ -47,7 +47,7 @@ namespace testCase
             SelectElement oselect2 = new SelectElement(elem3);
             oselect2.SelectByValue("1986");
 
-           // driver.FindElement(By.Id("u_0_6")).Click();
+           driver.FindElement(By.Id("u_0_6")).Click();
 
            // driver.FindElement(By.Name("submit")).Click();
 

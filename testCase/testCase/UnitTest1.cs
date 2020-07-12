@@ -34,20 +34,22 @@ namespace testCase
             driver.FindElement(By.Name("firstname")).SendKeys("Pavit");
             driver.FindElement(By.Name("lastname")).SendKeys("Sadhal");
             driver.FindElement(By.Id("u_0_r")).SendKeys("amalotey@gmail.com");
-           
-            IWebElement elem = driver.FindElement(By.Id("day"));                // Day
+            driver.FindElement(By.Id("password_step_input")).SendKeys("sdcnkhn");
+
+
+            IWebElement elem = driver.FindElement(By.Id("day"));  // Day
             SelectElement oselect = new SelectElement(elem);
             oselect.SelectByValue("16");
 
             IWebElement elem2 = driver.FindElement(By.Id("month"));                // Month
             SelectElement oselect1 = new SelectElement(elem2);
-            oselect1.SelectByValue("Jul");
+            oselect1.SelectByIndex(6);
 
             IWebElement elem3 = driver.FindElement(By.Id("year"));                // Year
             SelectElement oselect2 = new SelectElement(elem3);
-            oselect2.SelectByValue("1986");
+            oselect2.SelectByValue("1999");
 
-           driver.FindElement(By.Id("u_0_6")).Click();
+          driver.FindElement(By.Id("u_0_6")).Click();
 
            // driver.FindElement(By.Name("submit")).Click();
 

@@ -91,5 +91,23 @@ namespace TechInternFullSiteTest
             
           driver.Quit();
         }
+        [TestMethod]
+        public void contactForm()
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = "https://techintern.co.nz/index.html";
+            driver.FindElement(By.LinkText("Contact")).Click();
+            driver.FindElement(By.Name("name")).SendKeys("aman");
+            driver.FindElement(By.Name("email")).SendKeys("aman.lotey@gmail.com");
+            driver.FindElement(By.Name("subject")).SendKeys("automatic test");
+            driver.FindElement(By.Name("message")).SendKeys("I am one of the intern doing automatic testing");
+            driver.FindElement(By.Name("submit")).Click();
+            Thread.Sleep(2000);
+            driver.Quit();
+
+        }
+
+       
+
     }
 }

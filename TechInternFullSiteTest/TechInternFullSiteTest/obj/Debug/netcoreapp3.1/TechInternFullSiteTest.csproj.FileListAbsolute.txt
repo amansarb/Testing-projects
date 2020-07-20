@@ -93,3 +93,4 @@ C:\Users\Default.Default-Laptop\Desktop\Testing projects\TechInternFullSiteTest\
 C:\Users\Default.Default-Laptop\Desktop\Testing projects\TechInternFullSiteTest\TechInternFullSiteTest\obj\Debug\netcoreapp3.1\TechInternFullSiteTest.dll
 C:\Users\Default.Default-Laptop\Desktop\Testing projects\TechInternFullSiteTest\TechInternFullSiteTest\obj\Debug\netcoreapp3.1\TechInternFullSiteTest.pdb
 C:\Users\Default.Default-Laptop\Desktop\Testing projects\TechInternFullSiteTest\TechInternFullSiteTest\obj\Debug\netcoreapp3.1\TechInternFullSiteTest.genruntimeconfig.cache
+C:\Users\Default.Default-Laptop\Desktop\Testing projects\TechInternFullSiteTest\TechInternFullSiteTest\obj\Debug\netcoreapp3.1\TechInternFullSiteTest.csprojAssemblyReference.cache

@@ -83,12 +83,13 @@ namespace TechInternFullSiteTest
             SelectElement select1 = new SelectElement(elem1);
             select1.SelectByIndex(4);
             driver.FindElement(By.Name("comment")).SendKeys("one of he intern doing automatic testing");
-         //  driver.FindElement(By.Name("attachtment")).SendKeys("C:\\Users\\Default.Default-Laptop\\Desktop\\Aman new CV intern (1).docx");
-            
+            IWebElement uplaodFile = driver.FindElement(By.Name("attachment"));
+            uplaodFile.SendKeys("C:\\Users\\Default.Default-Laptop\\Desktop\\Aman new CV intern (1).docx");
+            driver.FindElement(By.Name("attachment2")).SendKeys("C:\\Users\\Default.Default-Laptop\\Desktop\\Aman new CV intern (1).docx");
             driver.FindElement(By.Name("submit")).Click();
             Thread.Sleep(2000);
             
-          //  driver.Quit();
+          driver.Quit();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace TechInternFullSiteTest
             driver.FindElement(By.XPath("//*[@id='home']/div[2]/div/div/div/a[2]")).Click();
             Thread.Sleep(2000);
 
-            driver.Quit();
+         driver.Quit();
 
 
 
@@ -50,14 +50,26 @@ namespace TechInternFullSiteTest
             driver.FindElement(By.LinkText("Our Programs")).Click();            // Click on Our programs
             driver.FindElement(By.LinkText("Home")).Click();
             driver.FindElement(By.XPath("//*[@id='home']/div[2]/div/div/div/a[2]")).Click();
+            //*[@id="Plans"]/div/div[1]/div/div/div[2]/div/a                                    
             Thread.Sleep(2000);
 
             driver.Quit();
+        }
+        [TestMethod]
+        public void CoursesSignUpForm()                                     // Functionalty of home page
+        {
+            IWebDriver driver = new ChromeDriver();
 
+            //Header Section
+            driver.Url = ("https://techintern.co.nz/");               // Navigate to TechIntern.co.nz
+            driver.Manage().Window.Maximize();                       // Maximize the Window
+            driver.FindElement(By.LinkText("Courses")).Click();            // Click on Our programs
+            driver.FindElement(By.XPath("//*[@id='Plans']/div/div[1]/div/div/div[2]/div/a ")).Click();
+            driver.FindElement(By.Name("firstName")).SendKeys("aman");
+                                               
+            Thread.Sleep(2000);
 
-
-
-
+            driver.Quit();
         }
     }
 }

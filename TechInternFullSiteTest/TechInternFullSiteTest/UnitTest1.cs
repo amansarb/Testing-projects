@@ -3,6 +3,9 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System;
 using System.Threading;
+using OpenQA.Selenium.Support;
+using OpenQA.Selenium.Support.UI;
+
 
 namespace TechInternFullSiteTest
 {
@@ -66,10 +69,26 @@ namespace TechInternFullSiteTest
             driver.FindElement(By.LinkText("Courses")).Click();            // Click on Our programs
             driver.FindElement(By.XPath("//*[@id='Plans']/div/div[1]/div/div/div[2]/div/a ")).Click();
             driver.FindElement(By.Name("firstName")).SendKeys("aman");
-                                               
+            driver.FindElement(By.Name("lastName")).SendKeys("deep");
+            driver.FindElement(By.Name("internEmail")).SendKeys("aman.lotey@gmail.com");
+            driver.FindElement(By.Name("phoneNumber")).SendKeys("2674155");
+            driver.FindElement(By.Name("startDate")).SendKeys("20/07/2020");
+              IWebElement elem= driver.FindElement(By.Id("months"));
+            SelectElement select = new SelectElement(elem);
+            select.SelectByValue("4");
+            driver.FindElement(By.Name("qualification")).SendKeys("Masters in IT");
+            driver.FindElement(By.Name("currentWork")).SendKeys("intern");
+            driver.FindElement(By.Name("currentLocation")).SendKeys("Hamilton");
+            IWebElement elem1 =driver.FindElement(By.Id("interestedIn"));
+            SelectElement select1 = new SelectElement(elem1);
+            select1.SelectByIndex(4);
+            driver.FindElement(By.Name("comment")).SendKeys("one of he intern doing automatic testing");
+         //  driver.FindElement(By.Name("attachtment")).SendKeys("C:\\Users\\Default.Default-Laptop\\Desktop\\Aman new CV intern (1).docx");
+            
+            driver.FindElement(By.Name("submit")).Click();
             Thread.Sleep(2000);
-
-            driver.Quit();
+            
+          //  driver.Quit();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace SeleniumJavascriptDemo
     [TestClass]
     public class UnitTest1
     {
-        IWebDriver driver = new ChromeDriver();
+      /* IWebDriver driver = new ChromeDriver();
 
         [TestMethod]
         public void JavaScriptAlertPopUp()
@@ -93,7 +93,34 @@ namespace SeleniumJavascriptDemo
 
             Thread.Sleep(2000);
             driver.Quit();
+        }*/
+        [TestMethod]
+        public void ChromeHeadless()
+        {
+            //ChromeOptions opt = new ChromeOptions();
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArgument("--headless");
+            IWebDriver driver1 = new ChromeDriver(chromeOptions);
+            driver1.Url = "https://techexpozed.co.nz/contact-us.php";
+           // driver1.Manage().Window.Maximize();
+            var header= driver1.FindElement(By.XPath("//h3[@class='heading']")).Text;
+            Console.WriteLine(header);
+            driver1.Quit();
         }
+        [TestMethod]
+        public void FireFoxHeadless()
+        {
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+           
+           firefoxOptions.AddArgument("--headless");
+            IWebDriver driver1 = new FirefoxDriver(firefoxOptions);
+            driver1.Url = "https://techexpozed.co.nz/contact-us.php";
+            // driver1.Manage().Window.Maximize();
+            var header = driver1.FindElement(By.XPath("//h3[@class='heading']")).Text;
+            Console.WriteLine(header);
+            driver1.Quit();
+        }
+
 
 
     }

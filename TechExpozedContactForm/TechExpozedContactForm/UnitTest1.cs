@@ -10,6 +10,27 @@ namespace TechExpozedContactForm
     public class UnitTest1
     {
         [TestMethod]
+        public void HeaderBarHomePage()
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = ("https://techexpozed.co.nz/");
+            driver.Manage().Window.Maximize();
+            //Header Bar functionalty 
+            driver.FindElement(By.LinkText("Home")).Click();                         // home page opened
+           //driver.Navigate().Back();
+            driver.FindElement(By.LinkText("Design")).Click();                         //  design opened
+           driver.Navigate().Back();
+            //driver.FindElement(By.LinkText("Our Services")).Click();                         // our services menu should be  opened
+           // driver.Navigate().Back();
+            driver.FindElement(By.XPath("//nav[@class='navigation-menu']//span[contains(text(),'About')]")).Click();                         // About page opened
+           // driver.Navigate().Back();
+            driver.FindElement(By.LinkText("Contact")).Click();                         // Contact page opened
+           // driver.Navigate().Back();
+
+            driver.Quit();
+
+        }
+        [TestMethod]
         public void TechExpoContactForm()
         {
             IWebDriver driver = new ChromeDriver();

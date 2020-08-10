@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IWebElementPropertiesMethods", "IWebElementPropertiesMethods\IWebElementPropertiesMethods.csproj", "{ABEBF756-7279-415C-96E8-8A3B3DF1102E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABEBF756-7279-415C-96E8-8A3B3DF1102E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABEBF756-7279-415C-96E8-8A3B3DF1102E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABEBF756-7279-415C-96E8-8A3B3DF1102E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABEBF756-7279-415C-96E8-8A3B3DF1102E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6AD63C5-FA50-4559-BF80-9DEC08AEA363}
+	EndGlobalSection
+EndGlobal

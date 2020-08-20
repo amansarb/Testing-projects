@@ -26,7 +26,7 @@ namespace TechBrozPurchaseModule
             driver.FindElement(By.XPath("//button[@name='add-to-cart']")).Click();
             Thread.Sleep(3000);
             driver.FindElement(By.XPath("//a[@class='button wc-forward']")).Click();
-            Thread.Sleep(4000);
+            Thread.Sleep(9000);
             driver.FindElement(By.LinkText("Proceed to checkout")).Click();
             Thread.Sleep(3000);
             // Fill billing form
@@ -39,9 +39,10 @@ namespace TechBrozPurchaseModule
             driver.FindElement(By.Id("billing_address_1")).SendKeys("2/36");
             driver.FindElement(By.Id("billing_address_2")).SendKeys("ulster street");
             driver.FindElement(By.Id("billing_city")).SendKeys("Hamilton");
-           driver.FindElement(By.XPath("//*[@id=select2 - billing_state - container]").FindElement(By.XPath("//*[@id=billing_state_field]/span/span/span[1]/span/span[2]")).Click();
-           // SelectElement select= new SelectElement(driver.FindElement(By.XPath("//*[@id=billing_state_field]/span/span/span[1]/span/span[2]")));
-           // select.SelectByIndex(1);
+             IWebElement element= driver.FindElement(By.Id("billing_state_field"));
+            element.Click();
+            SelectElement select = new SelectElement(element);
+             select.SelectByIndex(1);
             //elem1.Click();
            // SelectElement selectElement = new SelectElement(elem1);
             //selectElement.SelectByIndex(1);
@@ -62,7 +63,7 @@ namespace TechBrozPurchaseModule
                 .Click()
                 .SendKeys("please send confirmation email once dipatched"); */
 
-            Thread.Sleep(8000);
+            Thread.Sleep(4000);
             driver.Quit();
 
 

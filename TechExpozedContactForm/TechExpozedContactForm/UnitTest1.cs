@@ -3,6 +3,10 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System.Threading;
 using OpenQA.Selenium.Support.UI;
+using System.Linq;
+using System.Collections.Generic;
+using OfficeOpenXml;
+using System.IO;
 
 namespace TechExpozedContactForm
 {
@@ -30,6 +34,7 @@ namespace TechExpozedContactForm
             driver.Quit();
 
         }
+
         [TestMethod]
         public void TechExpoContactForm()
         {
@@ -100,6 +105,59 @@ namespace TechExpozedContactForm
             driver.FindElement(By.XPath("//*[@id='contact-form']/div/div[5]/button")).Click();                      // click send message
             Thread.Sleep(2000);
             driver.Quit();
+
+        }
+        [TestMethod]
+        [DataRow("aman","aman.lotey1986@gmail.com","m","One of the intern practicing Datadriven Testing")]
+        public void DataRowContactFormDatatDriven(string name, string email, string subject, string message)
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = ("https://techexpozed.co.nz/");
+            driver.Manage().Window.Maximize();
+            driver.FindElement(By.LinkText("Contact")).Click();                         // Contact page opened
+            driver.FindElement(By.Id("name")).SendKeys(name);                             // Name
+            driver.FindElement(By.Name("email")).SendKeys(email);      //email
+            driver.FindElement(By.Name("subject")).SendKeys(subject);
+           driver.FindElement(By.Id("message")).SendKeys(message);     // type message
+            driver.FindElement(By.XPath("//*[@id='contact-form']/div/div[5]/button")).Click();                      // click send message
+            Thread.Sleep(2000);
+            driver.Quit();
+
+        }
+        [TestMethod]
+        [DynamicData(nameof(ReadExcel),DynamicDataSourceType.Method)]
+        public void ExcelDataRowContactFormDatatDrive(string name, string email, string subject, string message)
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = ("https://techexpozed.co.nz/");
+            driver.Manage().Window.Maximize();
+            driver.FindElement(By.LinkText("Contact")).Click();                         // Contact page opened
+            driver.FindElement(By.Id("name")).SendKeys(name);                             // Name
+            driver.FindElement(By.Name("email")).SendKeys(email);      //email
+            driver.FindElement(By.Name("subject")).SendKeys(subject);
+            driver.FindElement(By.Id("message")).SendKeys(message);     // type message
+           // driver.FindElement(By.XPath("//*[@id='contact-form']/div/div[5]/button")).Click();                      // click send message
+            Thread.Sleep(2000);
+            driver.Quit();
+
+        }
+        public static IEnumerable<object[]> ReadExcel()
+
+        {
+            using (ExcelPackage package = new ExcelPackage(new FileInfo("contact.xlsx")))
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets["sheet1"];
+                int rowCount = worksheet.Dimension.End.Row;
+                for (var i = 2; i <= rowCount; i++)
+                {
+                    yield return new object[]
+                    {
+                        worksheet.Cells[i,1].Value?.ToString().Trim(),
+                         worksheet.Cells[i,2].Value?.ToString().Trim()
+                    };
+
+                }
+            }
 
         }
     }

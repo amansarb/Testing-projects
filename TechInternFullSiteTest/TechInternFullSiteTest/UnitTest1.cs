@@ -59,7 +59,7 @@ namespace TechInternFullSiteTest
             driver.Quit();
         }
         [TestMethod]
-        public void CoursesSignUpForm()                                     // Functionalty of home page
+        public void InternshipSignUpForm()                                     // Functionalty of home page
         {
             IWebDriver driver = new ChromeDriver();
 
@@ -72,7 +72,7 @@ namespace TechInternFullSiteTest
             driver.FindElement(By.Name("lastName")).SendKeys("deep");
             driver.FindElement(By.Name("internEmail")).SendKeys("aman.lotey@gmail.com");
             driver.FindElement(By.Name("phoneNumber")).SendKeys("2674155");
-            driver.FindElement(By.Name("startDate")).SendKeys("20/07/2020");
+            driver.FindElement(By.Name("startDate")).SendKeys("20/08/2020");
               IWebElement elem= driver.FindElement(By.Id("months"));
             SelectElement select = new SelectElement(elem);
             select.SelectByValue("4");
@@ -84,12 +84,115 @@ namespace TechInternFullSiteTest
             select1.SelectByIndex(4);
             driver.FindElement(By.Name("comment")).SendKeys("one of he intern doing automatic testing");
             IWebElement uplaodFile = driver.FindElement(By.Name("attachment"));
-            uplaodFile.SendKeys("C:\\Users\\Default.Default-Laptop\\Desktop\\Aman new CV intern (1).docx");
-            driver.FindElement(By.Name("attachment2")).SendKeys("C:\\Users\\Default.Default-Laptop\\Desktop\\Aman new CV intern (1).docx");
+            Thread.Sleep(2000);
+            uplaodFile.SendKeys("C:\\Users\\Default.Default-Laptop\\Documents\\Cover letter new.docx");
+            driver.FindElement(By.Name("attachment2")).SendKeys("C:\\Users\\Default.Default-Laptop\\Documents\\Cover letter new.docx");
             driver.FindElement(By.Name("submit")).Click();
             Thread.Sleep(2000);
             
           driver.Quit();
+        }
+        [TestMethod]
+        public void CourseSignUpForm()                                     // Functionalty of home page
+        {
+            IWebDriver driver = new ChromeDriver();
+
+            //Header Section
+            driver.Url = ("https://techintern.co.nz/");               // Navigate to TechIntern.co.nz
+            driver.Manage().Window.Maximize();                       // Maximize the Window
+            driver.FindElement(By.LinkText("Courses")).Click();            // Click on Our programs
+            driver.FindElement(By.XPath("//div[2]//div[1]//div[1]//div[2]//div[1]//a[1]")).Click();
+            driver.FindElement(By.Name("firstName")).SendKeys("aman");
+            driver.FindElement(By.Name("lastName")).SendKeys("deep");
+            driver.FindElement(By.Name("internEmail")).SendKeys("aman.lotey@gmail.com");
+            driver.FindElement(By.Name("phoneNumber")).SendKeys("2674155");
+            driver.FindElement(By.Name("startDate")).SendKeys("20/08/2020");
+            IWebElement elem = driver.FindElement(By.Id("months"));
+            SelectElement select = new SelectElement(elem);
+            select.SelectByValue("4");
+            driver.FindElement(By.Name("qualification")).SendKeys("Masters in IT");
+            driver.FindElement(By.Name("currentWork")).SendKeys("intern");
+            driver.FindElement(By.Name("currentLocation")).SendKeys("Hamilton");
+            IWebElement elem1 = driver.FindElement(By.Id("interestedIn"));
+            SelectElement select1 = new SelectElement(elem1);
+            select1.SelectByIndex(4);
+            driver.FindElement(By.Name("comment")).SendKeys("one of he intern doing automatic testing");
+            IWebElement uplaodFile = driver.FindElement(By.Name("attachment"));
+            Thread.Sleep(2000);
+            uplaodFile.SendKeys("C:\\Users\\Default.Default-Laptop\\Documents\\Cover letter new.docx");
+            driver.FindElement(By.Name("attachment2")).SendKeys("C:\\Users\\Default.Default-Laptop\\Documents\\Cover letter new.docx");
+            driver.FindElement(By.Name("submit")).Click();
+            Thread.Sleep(2000);
+
+            driver.Quit();
+        }
+        [TestMethod]
+        public void InternshipCourseSignUpForm()                                     // Functionalty of home page
+        {
+            IWebDriver driver = new ChromeDriver();
+
+            //Header Section
+            driver.Url = ("https://techintern.co.nz/");               // Navigate to TechIntern.co.nz
+            driver.Manage().Window.Maximize();                       // Maximize the Window
+            driver.FindElement(By.LinkText("Courses")).Click();            // Click on Our programs
+            driver.FindElement(By.XPath("//*[@id='Plans']/div/div[1]/div/div/div[2]/div/a ")).Click();
+            driver.FindElement(By.Name("firstName")).SendKeys("aman");
+            driver.FindElement(By.Name("lastName")).SendKeys("deep");
+            driver.FindElement(By.Name("internEmail")).SendKeys("aman.lotey@gmail.com");
+            driver.FindElement(By.Name("phoneNumber")).SendKeys("2674155");
+            driver.FindElement(By.Name("startDate")).SendKeys("20/08/2020");
+            IWebElement elem = driver.FindElement(By.Id("months"));
+            SelectElement select = new SelectElement(elem);
+            select.SelectByValue("4");
+            driver.FindElement(By.Name("qualification")).SendKeys("Masters in IT");
+            driver.FindElement(By.Name("currentWork")).SendKeys("intern");
+            driver.FindElement(By.Name("currentLocation")).SendKeys("Hamilton");
+            IWebElement elem1 = driver.FindElement(By.Id("interestedIn"));
+            SelectElement select1 = new SelectElement(elem1);
+            select1.SelectByIndex(4);
+            driver.FindElement(By.Name("comment")).SendKeys("one of he intern doing automatic testing");
+            IWebElement uplaodFile = driver.FindElement(By.Name("attachment"));
+            Thread.Sleep(2000);
+            uplaodFile.SendKeys("C:\\Users\\Default.Default-Laptop\\Documents\\Cover letter new.docx");
+            driver.FindElement(By.Name("attachment2")).SendKeys("C:\\Users\\Default.Default-Laptop\\Documents\\Cover letter new.docx");
+            driver.FindElement(By.Name("submit")).Click();
+            Thread.Sleep(2000);
+
+            driver.Quit();
+        }
+        [TestMethod]
+        public void RapidPlanSignUpForm()                                     // Functionalty of home page
+        {
+            IWebDriver driver = new ChromeDriver();
+
+            //Header Section
+            driver.Url = ("https://techintern.co.nz/");               // Navigate to TechIntern.co.nz
+            driver.Manage().Window.Maximize();                       // Maximize the Window
+            driver.FindElement(By.LinkText("Courses")).Click();            // Click on Our programs
+            driver.FindElement(By.XPath("//*[@id='Plans']/div/div[1]/div/div/div[2]/div/a ")).Click();
+            driver.FindElement(By.Name("firstName")).SendKeys("aman");
+            driver.FindElement(By.Name("lastName")).SendKeys("deep");
+            driver.FindElement(By.Name("internEmail")).SendKeys("aman.lotey@gmail.com");
+            driver.FindElement(By.Name("phoneNumber")).SendKeys("2674155");
+            driver.FindElement(By.Name("startDate")).SendKeys("20/08/2020");
+            IWebElement elem = driver.FindElement(By.Id("months"));
+            SelectElement select = new SelectElement(elem);
+            select.SelectByValue("4");
+            driver.FindElement(By.Name("qualification")).SendKeys("Masters in IT");
+            driver.FindElement(By.Name("currentWork")).SendKeys("intern");
+            driver.FindElement(By.Name("currentLocation")).SendKeys("Hamilton");
+            IWebElement elem1 = driver.FindElement(By.Id("interestedIn"));
+            SelectElement select1 = new SelectElement(elem1);
+            select1.SelectByIndex(4);
+            driver.FindElement(By.Name("comment")).SendKeys("one of he intern doing automatic testing");
+            IWebElement uplaodFile = driver.FindElement(By.Name("attachment"));
+            Thread.Sleep(2000);
+            uplaodFile.SendKeys("C:\\Users\\Default.Default-Laptop\\Documents\\Cover letter new.docx");
+            driver.FindElement(By.Name("attachment2")).SendKeys("C:\\Users\\Default.Default-Laptop\\Documents\\Cover letter new.docx");
+            driver.FindElement(By.Name("submit")).Click();
+            Thread.Sleep(2000);
+
+            driver.Quit();
         }
         [TestMethod]
         public void contactForm()

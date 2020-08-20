@@ -245,6 +245,8 @@ namespace SeleniumJavascriptDemo
         [TestMethod]
         public void SpecificElementScreenShot()
         {
+            
+            
             driver.Url = "https://www.facebook.com/";
             driver.Manage().Window.Maximize();
             IWebElement element = driver.FindElement(By.XPath("//*[@id='content']/div/div/div/div/div[1]/div/img"));
